@@ -45,7 +45,7 @@ public class Animals {
      *
      * @author 阿导
      * @time 2018/3/19
-     * @CopyRight 杭州微财科技有限公司
+     * @CopyRight 万物皆导
      * @param objs
      * @return java.lang.Integer
      */
