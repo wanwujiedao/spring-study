@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--   bean 的属性，
+       lazy-init：延迟加载
+       scope：指定作用域,或者使用注解@Scope
+       析构回调函数：一般实现 org.springframework.beans.factory.DisposableBean 接口，允许一个bean当容器需要其销毁时获得一次回调。
+       但是不建议使用，因为会与 spring 耦合，一般在 spring 中使用 @PreDestroy 注解或者使用 destroy-method 属性，使其不与 spring 耦合。
+    -->
+
+
+    <!--DI ：依赖注入-->
+    <bean id="china" class="com.dao.ioc.dao.impl.China"></bean>
+
+    <!--带参数的依赖注入-->
+    <bean id="japan_name" class="com.dao.ioc.dao.impl.Japan">
+        <constructor-arg name="name" value="日本"></constructor-arg>
+        <constructor-arg name="area" value="东亚"></constructor-arg>
+    </bean>
+    <bean id="japan_index" class="com.dao.ioc.dao.impl.Japan">
+        <constructor-arg index="0" value="小日本"></constructor-arg>
+        <constructor-arg index="1" value="东亚"></constructor-arg>
+    </bean>
+    <bean name="japan_property" class="com.dao.ioc.dao.impl.Japan">
+        <property name="name" value="japan"></property>
+        <property name="area" value="asian"></property>
+    </bean>
+
+
+</beans>
