@@ -1,5 +1,6 @@
+import com.alibaba.fastjson.JSON;
 import com.dao.ower.core.ConfigResolver;
-import com.dao.ower.vo.Blind;
+import com.dao.ower.vo.Dog;
 import org.junit.Test;
 
 /**
@@ -14,10 +15,15 @@ import org.junit.Test;
 public class SpringTest {
 
     @Test
-    public void test(){
-       ConfigResolver cfg=new ConfigResolver("spring.xml");
-       Blind b= (Blind) cfg.getBean("bind");
-       System.out.println("tell me how is the world :"+b.getEge().see());
+    public void test() {
+
+        ConfigResolver cfg = new ConfigResolver("E:\\springstudy\\ower\\src\\main\\resources\\spring.xml");
+        Dog dog = cfg.getBean("dog", Dog.class);
+        Dog dogOne = cfg.getBean("dog_one", Dog.class);
+        Dog dogTwo = cfg.getBean("dog_two", Dog.class);
+        dog.like();
+        System.out.println(JSON.toJSONString(dogOne));
+        System.out.println(JSON.toJSONString(dogTwo));
     }
 
 }

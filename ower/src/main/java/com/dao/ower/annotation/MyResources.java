@@ -14,5 +14,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 //为了书写简单 这里只作用于属性 也就是域 成员变量
 @Target(ElementType.FIELD)
-public @interface Resources {
+public @interface MyResources {
 }

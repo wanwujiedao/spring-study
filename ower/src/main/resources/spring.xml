@@ -3,7 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--bind 注入-->
-    <bean id="bind" class="com.dao.ower.vo.Blind"></bean>
+    <bean id="dog" class="com.dao.ower.vo.Dog"></bean>
+    <bean id="dog_one" class="com.dao.ower.vo.Dog">
+        <constructor-arg name="name" value="狮子狗" />
+    </bean>
+    <bean id="dog_two" class="com.dao.ower.vo.Dog">
+        <constructor-arg index="1" value="12" />
+        <constructor-arg index="0" value="狗头" />
+    </bean>
 
     <!--事件监听者注入-->
     <bean id="applicationStartLister" class="com.dao.ower.listen.ApplicationStartLister"></bean>
